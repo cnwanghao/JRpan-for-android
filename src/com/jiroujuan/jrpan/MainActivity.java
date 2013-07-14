@@ -1,7 +1,9 @@
 package com.jiroujuan.jrpan;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,6 +19,14 @@ public class MainActivity extends Activity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main);
+		new Handler().postDelayed(new Runnable(){
+			public void run(){
+				Intent intent = new Intent (MainActivity.this,LoginActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		},1500);
+	        
 	}
 
 	@Override
